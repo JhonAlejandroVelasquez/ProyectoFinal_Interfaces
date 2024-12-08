@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    /*Variables de colores*/
+    --clr-main: #45880e;
+    --clr-main-light: #73ff00;
+    --clr-white: #fff7e5;
+    --clr-gray: #e2e2e2;
+    --clr-green: #316b0a;
+    --clr-red: #961818;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+html {
+    /* Valor por defecto */
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul{
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.texto-footer{
+    color: var(--clr-main-light);
+    font-size: .85rem;
+}
+
+
+
+
+/*                           ESTILOS HTML LOGIN                    */
+
+/* Fondo general de la página */
+body {
+    background-color: #45880e; 
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+/* Estilo para el formulario */
+.container {
+    width: 600px; 
+    background-color: #fff7e5; 
+    padding: 40px 30px 30px; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    text-align: center;
+    position: relative;
+}
+
+/* Estilo para el título "Login" */
+h2 {
+    color: #45880e; 
+    font-size: 2rem; 
+    margin-bottom: 20px; 
+}
+
+/* Inputs */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 15px; 
+    margin-bottom: 20px;
+    border: 1px solid #e2e2e2; 
+    border-radius: 5px;
+    font-size: 1.2rem; 
+}
+
+/* Mensajes de error */
+.error-message {
+    color: #961818; 
+    font-size: 1rem; 
+    margin-bottom: 10px;
+}
+
+/* Botones */
+#botones input {
+    width: 100%; 
+    padding: 15px; 
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#submit {
+    background-color: #73ff00; 
+    color: white;
+}
+
+#limpiar {
+    background-color: #316b0a; 
+    color: white;
+}
+
+#submit:hover {
+    background-color: #45880e; 
+}
+
+#limpiar:hover {
+    background-color: #73ff00; 
+    color: white;
+}
