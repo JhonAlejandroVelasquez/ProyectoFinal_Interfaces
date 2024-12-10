@@ -120,3 +120,124 @@ input[type="text"], input[type="password"] {
     background-color: #73ff00; 
     color: white;
 }
+
+
+
+/*               ESTILOS MAIN.HTML       */
+
+/* Variables de colores */
+:root {
+    --clr-main: #45880e;
+    --clr-main-light: #73ff00;
+    --clr-white: #fff7e5;
+    --clr-gray: #e2e2e2;
+    --clr-crema: #fff7e5;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    background-color: var(--clr-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.contenedor {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    background-color: var(--clr-crema);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección principal de productos */
+.productos-main {
+    flex: 3;
+    padding: 20px;
+    background-color: var(--clr-crema);
+}
+
+.productos-main h2 {
+    color: var(--clr-main);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* Menú lateral */
+.menu-lateral {
+    flex: 1;
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-lateral .logo {
+    color: var(--clr-main-light);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.menu-lateral nav ul {
+    list-style: none;
+}
+
+.menu-lateral nav ul li {
+    margin-bottom: 10px;
+}
+
+.boton-menu {
+    width: 100%;
+    padding: 10px;
+    color: var(--clr-white);
+    background-color: transparent;
+    border: 1px solid var(--clr-main-light);
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.boton-menu:hover, .boton-menu.active {
+    background-color: var(--clr-main-light);
+    color: var(--clr-main);
+}
+
+.numerito {
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    margin-left: auto;
+}
+
+.texto-footer {
+    font-size: 0.85rem;
+    text-align: center;
+    color: var(--clr-main-light);
+}

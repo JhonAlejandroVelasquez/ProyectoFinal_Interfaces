@@ -98,3 +98,88 @@ document.addEventListener('DOMContentLoaded', () => {
         clearErrors();
     });
 });
+
+
+
+    // Código del main.html
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const contenedorProductos = document.getElementById("contenedor-productos");
+    const botonesCategoria = document.querySelectorAll(".boton-categoria");
+    const numeritoCarrito = document.getElementById("numerito");
+
+    let productos = [];
+    let carrito = [];
+
+    // Cargar los productos desde el JSON
+    const cargarProductos = async () => {
+        try {
+            const respuesta = await fetch("./productos.json");
+            productos = await respuesta.json();
+            mostrarProductos(productos);
+        } catch (error) {
+            console.error("Error al cargar los productos:", error);
+        }
+    };
+
+    // Mostrar productos en el contenedor
+    const mostrarProductos = (productos) => {
+        contenedorProductos.innerHTML = ""; // Limpiar el contenedor
+        productos.forEach((producto) => {
+            const div = document.createElement("div");
+            div.classList.add("producto");
+            div.innerHTML = `
+                <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
+                <div class="producto-detalles">
+                    <h3 class="producto-titulo">${producto.titulo}</h3>
+                    <p class="producto-precio">$${producto.precio}</p>
+                    <button class="producto-agregar" data-id="${producto.id}">Agregar</button>
+                </div>
+            `;
+            contenedorProductos.appendChild(div);
+        });
+
+        // Agregar eventos a los botones de agregar
+        document.querySelectorAll(".producto-agregar").forEach((boton) =>
+            boton.addEventListener("click", agregarAlCarrito)
+        );
+    };
+
+    // Filtrar productos por categoría
+    botonesCategoria.forEach((boton) => {
+        boton.addEventListener("click", (e) => {
+            const categoriaId = e.currentTarget.id;
+
+            botonesCategoria.forEach((btn) => btn.classList.remove("active"));
+            e.currentTarget.classList.add("active");
+
+            if (categoriaId === "todos") {
+                mostrarProductos(productos);
+            } else {
+                const productosFiltrados = productos.filter(
+                    (producto) => producto.categoria.id === categoriaId
+                );
+                mostrarProductos(productosFiltrados);
+            }
+        });
+    });
+
+    // Agregar producto al carrito
+    const agregarAlCarrito = (e) => {
+        const idProducto = e.currentTarget.dataset.id;
+        const productoSeleccionado = productos.find(
+            (producto) => producto.id === idProducto
+        );
+
+        carrito.push(productoSeleccionado);
+        actualizarCarrito();
+    };
+
+    // Actualizar el número del carrito
+    const actualizarCarrito = () => {
+        numeritoCarrito.textContent = carrito.length;
+    };
+
+    // Inicializar la app
+    cargarProductos();
+});
