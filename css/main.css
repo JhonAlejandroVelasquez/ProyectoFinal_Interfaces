@@ -1,0 +1,264 @@
+/* Variables de colores */
+:root {
+    --clr-main: #45880e;
+    --clr-main-light: #73ff00;
+    --clr-white: #fff7e5;
+    --clr-gray: #e2e2e2;
+    --clr-crema: #fff7e5;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    background-color: var(--clr-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0.5rem;
+}
+
+/* Contenedor principal */
+
+.titulo-principal {
+    text-align: left;
+}
+.layout {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 120rem;
+    padding: 1rem;
+    background-color: var(--clr-main);
+    padding: 0;
+}
+
+.contenedor {
+    flex: 3;
+    background-color: var(--clr-crema);
+    border-radius: 3em;
+    overflow: hidden;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    margin-top: 0em;
+    
+}
+
+main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+main h2 {
+    color: var(--clr-main);
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem; /* Espaciado entre productos */
+    min-height: 70vh;
+}
+
+
+/*                          POSICIONAMIENTO INFORMACION JS DE CADA DISPOSITIVO                */
+.producto {
+    background-color: var(--clr-white);
+    border: 0.0625rem solid var(--clr-gray);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Alinea los detalles al final */
+    height: 100%;
+}
+
+.producto-detalles {
+    background-color: var(--clr-main); /* Fondo verde */
+    color: var(--clr-crema); /* Texto en color crema */
+    padding: 0.5rem; /* Espaciado interno */
+    border-top-left-radius: 1rem; /* Bordes redondeados superiores */
+    border-top-right-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem; /* Espaciado entre los elementos */
+    margin-top: auto;
+    height: auto; /* Ajusta dinámicamente la altura */
+    justify-content: center; /* Centra los elementos verticalmente */
+}
+
+.producto-titulo {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 0;
+    color: var(--clr-crema); /* Título en color crema */
+}
+
+.producto-precio {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    color: var(--clr-crema); /* Precio en color crema */
+}
+
+.producto-agregar {
+    background-color: var(--clr-white); /* Fondo blanco */
+    color: var(--clr-main); /* Texto verde */
+    border: none;
+    border-radius: 1rem; /* Bordes redondeados */
+    padding: 0.4rem 1rem; /* Tamaño ajustado del botón */
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.producto-agregar:hover {
+    background-color: var(--clr-main-light); /* Fondo verde claro al pasar el mouse */
+    color: var(--clr-main); /* Texto verde oscuro */
+}
+
+
+
+.producto img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/*  Modificar el precio, nombre dispositivo*/
+.producto-detalles {
+    padding: 1rem;
+}
+
+.producto-titulo {
+    color: var(--clr-main);
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.producto-precio {
+    color: var(--clr-main-light);
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.producto-agregar {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    border: none;
+    padding: 0.625rem;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 0.625rem;
+}
+
+.producto-agregar:hover {
+    background-color: var(--clr-main-light);
+    color: var(--clr-main);
+}
+
+/* Menú lateral */
+.aside-visible {
+    flex: 1;
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    padding: 2rem;
+}
+
+.aside-visible .logo {
+    color: var(--clr-main-light);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.aside-visible nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.aside-visible nav ul li {
+    margin-bottom: 0;
+}
+
+.boton-menu {
+    width: 100%;
+    padding: 0.625rem;
+    color: var(--clr-white);
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+
+
+/* Giramos las manos a la derecha con un giro de 90 grados para que se vea como en el pdf del profesor*/
+.bi-hand-index-thumb {
+    transform: rotate(90deg); 
+    display: inline-block; 
+}
+
+
+/* Color de "Todos los productos" y "Carrito" --> Color crema */
+.boton-menu.active {
+    background-color: var(--clr-crema);
+    color: var(--clr-main);
+}
+
+.boton-menu:hover {
+    background-color: var(--clr-main-light);
+    color: var(--clr-main);
+}
+
+.numerito {
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    font-weight: bold;
+    padding: 0.125rem 0.375rem;
+    border-radius: 50%;
+    margin-left: auto;
+}
+
+.texto-footer {
+    font-size: 0.85rem;
+    text-align: center;
+    color: var(--clr-main-light);
+}
+
+/* Ocultamos algunos textos ya que no los necesitamos por ahora pero luego,
+ al minimizar los emplearemos*/
+#close-menu {
+    display: none;
+}
+
+#open-menu {
+    display: none;
+}
+
+.logo {
+    display: none;
+}

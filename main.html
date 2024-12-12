@@ -7,27 +7,148 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="./css/comun.css" />
     <link rel="stylesheet" type="text/css" href="./css/main.css" />
-    <script src="js/main.js" defer></script>
+    <script type="text/javascript" src="./js/main.js" ></script>
 </head>
 <body>
-    <div class="contenedor">
-        <!-- Encabezado para móviles -->
-        <header class="header-mobile">
-            <button class="open-menu" id="open-menu">
-                <i class="bi bi-list"></i>
-            </button>
-        </header>
+    <div class="layout">
+        <div class="contenedor">
+            <header class="header-mobile">
+                <h1 class="logo">CarbaShop</h1>
+                <button class="open-menu" id="open-menu">
+                    <i class="bi bi-list"></i>
+                </button>
+            </header>
+            <main>
+                <h2 id="titulo-principal" class="titulo-principal">Todos los productos</h2>
+                <div id="contenedor-productos" class="contenedor-productos">
+                    
+                    <!--Esta sección ha de rellenarse con JS en base al siguiente formato:  -->
 
-        <!-- Sección principal -->
-        <main class="productos-main">
-            <h2 id="titulo-principal" class="titulo-principal">Portátiles</h2>
-            <div id="contenedor-productos" class="contenedor-productos">
-                <!-- Los productos se agregarán dinámicamente aquí -->
-            </div>
-        </main>
-
-        <!-- Menú lateral derecho -->
-        <aside class="aside-visible menu-lateral">
+                    <div id="contenedor-productos" class="contenedor-productos">
+                        <!-- Móviles -->
+                        <div class="producto">
+                            <img class="producto-imagen" src="./img/moviles/01.jpg" alt="Móvil 01">
+                            <div class="producto-detalles">
+                                <h3 class="producto-titulo">Móvil 01</h3>
+                                <p class="producto-precio">$850</p>
+                                <button class="producto-agregar" data-id="movil01">Agregar</button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img class="producto-imagen" src="./img/moviles/02.jpg" alt="Móvil 02">
+                            <div class="producto-detalles">
+                                <h3 class="producto-titulo">Móvil 02</h3>
+                                <p class="producto-precio">$909</p>
+                                <button class="producto-agregar" data-id="movil02">Agregar</button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img class="producto-imagen" src="./img/moviles/03.jpg" alt="Móvil 03">
+                            <div class="producto-detalles">
+                                <h3 class="producto-titulo">Móvil 03</h3>
+                                <p class="producto-precio">$1249</p>
+                                <button class="producto-agregar" data-id="movil03">Agregar</button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img class="producto-imagen" src="./img/moviles/04.jpg" alt="Móvil 04">
+                            <div class="producto-detalles">
+                                <h3 class="producto-titulo">Móvil 04</h3>
+                                <p class="producto-precio">$349</p>
+                                <button class="producto-agregar" data-id="movil04">Agregar</button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img class="producto-imagen" src="./img/moviles/05.jpg" alt="Móvil 05">
+                            <div class="producto-detalles">
+                                <h3 class="producto-titulo">Móvil 05</h3>
+                                <p class="producto-precio">$450</p>
+                                <button class="producto-agregar" data-id="movil05">Agregar</button>
+                            </div>
+                        </div>
+                    
+                        <!-- Portátiles -->
+                        <div class="producto">
+                            <img class="producto-imagen" src="./img/portatiles/01.jpg" alt="Portátil 01">
+                            <div class="producto-detalles">
+                                <h3 class="producto-titulo">Portátil 01</h3>
+                                <p class="producto-precio">$1250</p>
+                                <button class="producto-agregar" data-id="portatil01">Agregar</button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img class="producto-imagen" src="./img/portatiles/02.jpg" alt="Portátil 02">
+                            <div class="producto-detalles">
+                                <h3 class="producto-titulo">Portátil 02</h3>
+                                <p class="producto-precio">$1100</p>
+                                <button class="producto-agregar" data-id="portatil02">Agregar</button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img class="producto-imagen" src="./img/portatiles/03.jpg" alt="Portátil 03">
+                            <div class="producto-detalles">
+                                <h3 class="producto-titulo">Portátil 03</h3>
+                                <p class="producto-precio">$650</p>
+                                <button class="producto-agregar" data-id="portatil03">Agregar</button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img class="producto-imagen" src="./img/portatiles/04.jpg" alt="Portátil 04">
+                            <div class="producto-detalles">
+                                <h3 class="producto-titulo">Portátil 04</h3>
+                                <p class="producto-precio">$450</p>
+                                <button class="producto-agregar" data-id="portatil04">Agregar</button>
+                            </div>
+                        </div>
+                    
+                        <!-- Televisores -->
+                        <div class="producto">
+                            <img class="producto-imagen" src="./img/televisiones/01.jpg" alt="Televisor 01">
+                            <div class="producto-detalles">
+                                <h3 class="producto-titulo">Televisor 01</h3>
+                                <p class="producto-precio">$500</p>
+                                <button class="producto-agregar" data-id="televisor01">Agregar</button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img class="producto-imagen" src="./img/televisiones/02.jpg" alt="Televisor 02">
+                            <div class="producto-detalles">
+                                <h3 class="producto-titulo">Televisor 02</h3>
+                                <p class="producto-precio">$1000</p>
+                                <button class="producto-agregar" data-id="televisor02">Agregar</button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img class="producto-imagen" src="./img/televisiones/03.jpg" alt="Televisor 03">
+                            <div class="producto-detalles">
+                                <h3 class="producto-titulo">Televisor 03</h3>
+                                <p class="producto-precio">$700</p>
+                                <button class="producto-agregar" data-id="televisor03">Agregar</button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img class="producto-imagen" src="./img/televisiones/04.jpg" alt="Televisor 04">
+                            <div class="producto-detalles">
+                                <h3 class="producto-titulo">Televisor 04</h3>
+                                <p class="producto-precio">$550</p>
+                                <button class="producto-agregar" data-id="televisor04">Agregar</button>
+                            </div>
+                        </div>
+                        <div class="producto">
+                            <img class="producto-imagen" src="./img/televisiones/05.jpg" alt="Televisor 05">
+                            <div class="producto-detalles">
+                                <h3 class="producto-titulo">Televisor 05</h3>
+                                <p class="producto-precio">$1200</p>
+                                <button class="producto-agregar" data-id="televisor05">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </main>
+        </div>
+        <aside class="aside-visible">
             <button class="close-menu" id="close-menu">
                 <i class="bi bi-x"></i>
             </button>
@@ -36,15 +157,15 @@
             </header>
             <nav>
                 <ul class="menu">
-                    <li><button id="todos" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb-fill"></i>Todos los productos</button></li>
+                    <li><button id="todos" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb"></i>Todos los productos</button></li>
                     <li><button id="moviles" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>Móviles</button></li>
-                    <li><button id="portatiles" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb"></i>Portátiles</button></li>
-                    <li><button id="televisiones" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>Televisores</button></li>
-                    <li><a class="boton-menu boton-carrito" href="./carrito.html"><i class="bi bi-cart-fill"></i>Carrito <span id="numerito" class="numerito">0</span></a></li>
+                    <li><button id="portatiles" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>Portátiles</button></li>
+                    <li><button id="televisores" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>Televisores</button></li>
+                    <li><a class="boton-menu boton-carrito active" href="./carrito.html"><i class="bi bi-cart-fill"></i>Carrito <span id="numerito" class="numerito">0</span></a></li>
                 </ul>
             </nav>
             <footer>
-                <p class="texto-footer">Alumno 2030 &copy;</p>
+                <p class="texto-footer">Jhon Alejandro Velasquez &copy;</p>
             </footer>
         </aside>
     </div>

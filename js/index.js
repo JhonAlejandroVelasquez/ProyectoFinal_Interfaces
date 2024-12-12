@@ -80,15 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Evento de envío del formulario
     form.addEventListener('submit', (event) => {
-        event.preventDefault(); // Con esta estructura, prevenimos el envío del formulario si hay errores
-
         clearErrors(); 
         const isUsernameValid = validateUsername();
         const isPasswordValid = validatePassword();
 
-        if (isUsernameValid && isPasswordValid) {
-            alert('Formulario enviado con éxito.');
+        if (!isUsernameValid || !isPasswordValid) {
+            event.preventDefault(); // Con esta estructura, prevenimos el envío del formulario si hay errores
         }
+        
     });
 
     // Empleamos el evento blur tal y como nos dijo el profesor para mejorar
