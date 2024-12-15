@@ -25,10 +25,6 @@ body {
 }
 
 /* Contenedor principal */
-
-.titulo-principal {
-    text-align: left;
-}
 .layout {
     display: flex;
     justify-content: center;
@@ -49,8 +45,6 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    margin-top: 0em;
-    
 }
 
 main {
@@ -69,104 +63,58 @@ main h2 {
 .contenedor-productos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem; /* Espaciado entre productos */
-    min-height: 70vh;
+    gap: 1.5rem;
+    min-height: 90vh;
 }
 
+.header-mobile .logo {
+    display: none; /* Ocultar solo el CarbaShop de la izquierda */
+}
 
-/*                          POSICIONAMIENTO INFORMACION JS DE CADA DISPOSITIVO                */
+/* Con esto giramos el dedo de la mano a la derecha*/
+.boton-menu .bi-hand-index-thumb {
+    transform: rotate(90deg);  /*Realizamos un giro de 90º*/
+    display: inline-block; }
+
+
+/* Producto */
 .producto {
     background-color: var(--clr-white);
-    border: 0.0625rem solid var(--clr-gray);
+    
     border-radius: 0.5rem;
     overflow: hidden;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Alinea los detalles al final */
-    height: 100%;
+    justify-content: flex-start; /* Alineamos el contenido al inicio */
+    height: auto; /* Le ponemos una altura automática */
 }
+
 
 .producto-detalles {
-    background-color: var(--clr-main); /* Fondo verde */
-    color: var(--clr-crema); /* Texto en color crema */
-    padding: 0.5rem; /* Espaciado interno */
-    border-top-left-radius: 1rem; /* Bordes redondeados superiores */
-    border-top-right-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.3rem; /* Espaciado entre los elementos */
-    margin-top: auto;
-    height: auto; /* Ajusta dinámicamente la altura */
-    justify-content: center; /* Centra los elementos verticalmente */
-}
-
-.producto-titulo {
-    font-size: 0.9rem;
-    font-weight: bold;
-    margin: 0;
-    color: var(--clr-crema); /* Título en color crema */
-}
-
-.producto-precio {
-    font-size: 1rem;
-    font-weight: bold;
-    margin: 0;
-    color: var(--clr-crema); /* Precio en color crema */
-}
-
-.producto-agregar {
-    background-color: var(--clr-white); /* Fondo blanco */
-    color: var(--clr-main); /* Texto verde */
-    border: none;
-    border-radius: 1rem; /* Bordes redondeados */
-    padding: 0.4rem 1rem; /* Tamaño ajustado del botón */
-    font-size: 0.9rem;
-    cursor: pointer;
-    text-align: center;
-}
-
-.producto-agregar:hover {
-    background-color: var(--clr-main-light); /* Fondo verde claro al pasar el mouse */
-    color: var(--clr-main); /* Texto verde oscuro */
-}
-
-
-
-.producto img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-/*  Modificar el precio, nombre dispositivo*/
-.producto-detalles {
-    padding: 1rem;
-}
-
-.producto-titulo {
-    color: var(--clr-main);
-    font-size: 1rem;
-    margin: 0.5rem 0;
-}
-
-.producto-precio {
-    color: var(--clr-main-light);
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
-}
-
-.producto-agregar {
     background-color: var(--clr-main);
-    color: var(--clr-white);
+    color: var(--clr-crema);
+    padding: 0.5rem; 
+    border-radius: 1rem
+}
+
+.producto-titulo, .producto-precio {
+    font-size: 1rem;
+    font-weight: bold; /*Creo que es en negrita o así lo percibí yo*/
+    color: var(--clr-crema);
+    margin: 0.05rem 0; 
+}
+
+.producto-agregar {
+    background-color: var(--clr-white);
+    color: var(--clr-main);
     border: none;
-    padding: 0.625rem;
-    border-radius: 0.3125rem;
+    border-radius: 1rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem; 
     cursor: pointer;
-    font-size: 0.9rem;
-    margin-top: 0.625rem;
+    margin-top: 0.25rem; 
 }
 
 .producto-agregar:hover {
@@ -174,18 +122,25 @@ main h2 {
     color: var(--clr-main);
 }
 
-/* Menú lateral */
+/* Menú lateral derecho */
 .aside-visible {
     flex: 1;
     background-color: var(--clr-main);
     color: var(--clr-white);
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
 }
 
 .aside-visible .logo {
-    color: var(--clr-main-light);
+    display: block;
+    color: var(  --clr-white);
     font-size: 1.5rem;
     text-align: center;
+    margin-bottom: 8rem;
+    margin-top: 0.5rem; 
 }
 
 .aside-visible nav ul {
@@ -196,15 +151,11 @@ main h2 {
     gap: 1rem;
 }
 
-.aside-visible nav ul li {
-    margin-bottom: 0;
-}
-
 .boton-menu {
     width: 100%;
     padding: 0.625rem;
     color: var(--clr-white);
-    background-color: transparent;
+    background-color: var(--clr-main);
     border: none;
     font-size: 1rem;
     text-align: left;
@@ -214,24 +165,24 @@ main h2 {
     gap: 0.625rem;
 }
 
-
-
-/* Giramos las manos a la derecha con un giro de 90 grados para que se vea como en el pdf del profesor*/
-.bi-hand-index-thumb {
-    transform: rotate(90deg); 
-    display: inline-block; 
-}
-
-
-/* Color de "Todos los productos" y "Carrito" --> Color crema */
-.boton-menu.active {
+.boton-menu:hover, .boton-menu.active {
     background-color: var(--clr-crema);
     color: var(--clr-main);
 }
 
-.boton-menu:hover {
-    background-color: var(--clr-main-light);
-    color: var(--clr-main);
+
+
+/* Ocultamos el menú lateral izquierdo y el botón de cerrar */
+.header-mobile {
+    display: none; 
+}
+
+#close-menu {
+    display: none; 
+}
+
+.logo {
+    display: none;
 }
 
 .numerito {
@@ -245,20 +196,209 @@ main h2 {
 
 .texto-footer {
     font-size: 0.85rem;
-    text-align: center;
+    text-align: left;
     color: var(--clr-main-light);
+    padding-top: 60rem;
+
 }
 
-/* Ocultamos algunos textos ya que no los necesitamos por ahora pero luego,
- al minimizar los emplearemos*/
-#close-menu {
-    display: none;
+
+/* Media Query para 850px */
+@media screen and (max-width: 850px) {
+    .contenedor-productos {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 1rem; 
+    }
+
+    .aside-visible {
+        padding: 1rem;
+    }
+
+    .boton-menu {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
 }
 
-#open-menu {
-    display: none;
+/* Media Query para 675px */
+@media screen and (max-width: 675px) {
+    .contenedor-productos {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+
+    .producto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        background-color: var(--clr-white);
+    }
+
+    .producto img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        object-fit: contain;
+    }
+
+    /* Mostramos el texto "CarbaShop" a la izquierda */
+    .header-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        background-color: var(--clr-main);
+        color: var(--clr-crema);
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    }
+
+    .header-mobile .logo {
+        display: block;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: var(--clr-main-light);
+    }
+
+    
+    .header-mobile button {
+        background: none;
+        border: none;
+        color: var(--clr-crema);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    
+    .aside-visible {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0; 
+        width: 70%;
+        height: 100%;
+        background-color: var(--clr-main);
+        box-shadow: -0.125rem 0 0.25rem rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 2rem 1rem;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+   
+    .aside-visible.open {
+        display: none;
+    }
+
+    .aside-visible .boton-menu {
+        background-color: transparent;
+        color: var(--clr-white);
+        text-align: left;
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+        border: none;
+        cursor: pointer;
+    }
+
+    .aside-visible .boton-menu:hover {
+        background-color: var(--clr-crema);
+        color: var(--clr-main);
+    }
 }
 
-.logo {
-    display: none;
+
+/* Media Query para 400px */
+@media screen and (max-width: 400px) {
+    .contenedor {
+        border-radius: 1rem;
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .contenedor-productos {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        gap: 1rem; 
+    }
+
+    .producto {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center; 
+        width: 100%; 
+        max-width: 300px; 
+        margin: 0 auto; 
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        background-color: var(--clr-white);
+    }
+
+    .producto img {
+        width: 100%; 
+        height: auto; 
+        object-fit: contain; 
+        max-height: 200px; 
+    }
+
+    .producto-detalles {
+        background-color: var(--clr-main);
+        color: var(--clr-crema);
+        padding: 0.8rem;
+        text-align: center;
+        border-radius: 0.5rem;
+        width: 100%;
+    }
+
+    .producto-titulo,
+    .producto-precio {
+        font-size: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    .producto-agregar {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        margin-top: 0.5rem;
+    }
+
+    /* Menú Superior */
+    .header-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--clr-main);
+        padding: 0.5rem 1rem;
+        color: var(--clr-crema);
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    }
+
+    .header-mobile .logo {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: var(--clr-main-light);
+    }
+
+    .header-mobile button {
+        background: none;
+        border: none;
+        color: var(--clr-crema);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .aside-visible {
+        display: none; /* Ocultamos el menú lateral */
+    }
 }

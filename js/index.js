@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('#formulario');
-    const usernameInput = document.querySelector('#nombre'); 
+    const usernameInput = document.querySelector('#nombre');
     const passwordInput = document.querySelector('#password');
     const errorNombre = document.querySelector('#error-nombre');
     const errorPassword = document.querySelector('#error-password');
@@ -28,15 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
         }
 
-         // Longitud mínima mayor a 2 (Aunque no se pedía explicitamente, puse esta condición
-         // para que si el usuario pone 1 caracter, de fallo, ya que, no conozco un nombre de una persona
-         // con solo 1 caracter, con tres, sí, Sol, por ejemplo)
+        // Caso 2: Longitud mínima
         if (username.length < 3) {
             showError(errorNombre, 'El nombre debe tener al menos 3 caracteres.');
             return false;
         }
 
-        // Caso 2: Formato inválido
+        // Caso 3: Formato inválido
         const usernameRegex = /^[a-zA-ZÁÉÍÓÚáéíóúÜüñÑ\s]+$/; // Esta validación nos permite emplear
         // mayúsculas, minúsculas, acentos, la ñ y espacios en blanco.
         if (!usernameRegex.test(username)) {
@@ -44,12 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
         }
 
-        // Caso 3: Longitud máxima
+        // Caso 4: Longitud máxima
         if (username.length > 20) {
             showError(errorNombre, 'El nombre no puede tener más de 20 caracteres.');
             return false;
         }
 
+        // Si todo está bien, limpiar el mensaje de error
+        errorNombre.textContent = '';
         return true;
     }
 
@@ -64,9 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Caso 2: Formato inválido
-        const passwordRegex = /^[a-zA-Z0-9!$%&/()*+,-.:;=?@_]+$/; // A diferencia de la validación del nombre de usuario
-        // esta, nos permite emplear números y algunos caracteres especiales como
-        //  ·$%&/(). (Lo que nos pide el profesor)
+        const passwordRegex = /^[a-zA-Z0-9!$%&/()*+,-.:;=?@_]+$/; // Esta validación nos permite emplear
+        // números y algunos caracteres especiales como ·$%&/(). (Lo que nos pide el profesor)
         if (password.length < 8 || password.length > 16 || !passwordRegex.test(password)) {
             showError(
                 errorPassword,
@@ -75,19 +74,21 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
         }
 
+        // Si todo está bien, limpiar el mensaje de error
+        errorPassword.textContent = '';
         return true;
     }
 
     // Evento de envío del formulario
     form.addEventListener('submit', (event) => {
-        clearErrors(); 
+        clearErrors(); // Limpiamos errores previos antes de validar nuevamente
         const isUsernameValid = validateUsername();
         const isPasswordValid = validatePassword();
 
+        // Si alguna validación falla, prevenimos el envío del formulario
         if (!isUsernameValid || !isPasswordValid) {
-            event.preventDefault(); // Con esta estructura, prevenimos el envío del formulario si hay errores
+            event.preventDefault(); // Evita que el formulario se envíe
         }
-        
     });
 
     // Empleamos el evento blur tal y como nos dijo el profesor para mejorar
@@ -98,10 +99,17 @@ document.addEventListener('DOMContentLoaded', () => {
     usernameInput.addEventListener('blur', validateUsername);
     passwordInput.addEventListener('blur', validatePassword);
 
+    // Mejoramos la experiencia con el evento 'input' para limpiar errores en tiempo real
+    usernameInput.addEventListener('input', validateUsername);
+    passwordInput.addEventListener('input', validatePassword);
+
     // Evento del botón limpiar
     clearButton.addEventListener('click', () => {
+        // Limpiamos los valores de los campos de texto
         usernameInput.value = '';
         passwordInput.value = '';
+
+        // Limpiamos todos los mensajes de error
         clearErrors();
     });
 });

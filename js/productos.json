@@ -51,131 +51,131 @@
     },
     {
         "id": "portatil-01",
-        "titulo": "Portatil 01",
+        "titulo": "Portátil 01",
         "imagen": "./img/portatiles/01.jpg",
         "categoria": {
-            "nombre": "Portatiles",
+            "nombre": "Portátiles",
             "id": "portatiles"
         },
         "precio": 1250
     },
     {
         "id": "portatil-02",
-        "titulo": "Portatil 02",
+        "titulo": "Portátil 02",
         "imagen": "./img/portatiles/02.jpg",
         "categoria": {
-            "nombre": "Portatiles",
+            "nombre": "Portátiles",
             "id": "portatiles"
         },
         "precio": 1100
     },
     {
         "id": "portatil-03",
-        "titulo": "Portatil 03",
+        "titulo": "Portátil 03",
         "imagen": "./img/portatiles/03.jpg",
         "categoria": {
-            "nombre": "Portatiles",
+            "nombre": "Portátiles",
             "id": "portatiles"
         },
         "precio": 650
     },
     {
         "id": "portatil-04",
-        "titulo": "Portatil 04",
+        "titulo": "Portátil 04",
         "imagen": "./img/portatiles/04.jpg",
         "categoria": {
-            "nombre": "Portatiles",
+            "nombre": "Portátiles",
             "id": "portatiles"
         },
         "precio": 450
     },
     {
         "id": "portatil-05",
-        "titulo": "Portatil 05",
+        "titulo": "Portátil 05",
         "imagen": "./img/portatiles/05.jpg",
         "categoria": {
-            "nombre": "Portatiles",
+            "nombre": "Portátiles",
             "id": "portatiles"
         },
         "precio": 909
     },
     {
-        "id": "portatil-06",
-        "titulo": "Portatil 06",
+	"id": "portatil-06",
+        "titulo": "Portátil 06",
         "imagen": "./img/portatiles/06.jpg",
         "categoria": {
-            "nombre": "Portatiles",
+            "nombre": "Portátiles",
             "id": "portatiles"
         },
         "precio": 899
     },
     {
-        "id": "portatil-07",
-        "titulo": "Portatil 07",
+	"id": "portatil-07",
+        "titulo": "Portátil 07",
         "imagen": "./img/portatiles/07.jpg",
         "categoria": {
-            "nombre": "Portatiles",
+            "nombre": "Portátiles",
             "id": "portatiles"
         },
         "precio": 700
     },
     {
-        "id": "portatil-08",
-        "titulo": "Portatil 08",
+	"id": "portatil-08",
+        "titulo": "Portátil 08",
         "imagen": "./img/portatiles/08.jpg",
         "categoria": {
-            "nombre": "Portatiles",
+            "nombre": "Portátiles",
             "id": "portatiles"
         },
         "precio": 400
     },
     {
         "id": "television-01",
-        "titulo": "Televisiones 01",
+        "titulo": "Televisor 01",
         "imagen": "./img/televisiones/01.jpg",
         "categoria": {
-            "nombre": "Televisiones",
-            "id": "televisiones"
+            "nombre": "Televisores",
+            "id": "televisores"
         },
         "precio": 500
     },
     {
         "id": "television-02",
-        "titulo": "Televisiones 02",
+        "titulo": "Televisor 02",
         "imagen": "./img/televisiones/02.jpg",
         "categoria": {
-            "nombre": "Televisiones",
-            "id": "televisiones"
+            "nombre": "Televisores",
+            "id": "televisores"
         },
         "precio": 1000
     },
     {
         "id": "television-03",
-        "titulo": "Televisiones 03",
+        "titulo": "Televisor 03",
         "imagen": "./img/televisiones/03.jpg",
         "categoria": {
-            "nombre": "Televisiones",
-            "id": "televisiones"
+            "nombre": "Televisores",
+            "id": "televisores"
         },
         "precio": 700
     },
     {
         "id": "television-04",
-        "titulo": "Televisiones 04",
+        "titulo": "Televisor 04",
         "imagen": "./img/televisiones/04.jpg",
         "categoria": {
-            "nombre": "Televisiones",
-            "id": "televisiones"
+            "nombre": "Televisores",
+            "id": "televisores"
         },
         "precio": 550
     },
     {
         "id": "television-05",
-        "titulo": "Televisiones 05",
+        "titulo": "Televisor 05",
         "imagen": "./img/televisiones/05.jpg",
         "categoria": {
-            "nombre": "Televisiones",
-            "id": "televisiones"
+            "nombre": "Televisores",
+            "id": "televisores"
         },
         "precio": 1200
     }
